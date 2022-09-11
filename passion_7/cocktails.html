@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Passion</title>
+    <link rel="stylesheet" href="generel.css">
+  </head>
+  <body>
+    <header>
+        <div class="logo" id="hjem">
+          <a href="index.html">
+            <img src="logo.svg" alt="logo">
+          </a>
+        </div>
+        <nav class="main-menu">
+            <div class="toggle-btn">Menu</div>        
+            <ul>
+                <li class="active">
+                    <a href="index.html">
+                        <p>Hjem</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html">
+                        <p>Om</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="cocktails.html">
+                        <p>Opskrifter</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html">
+                        <p>Kontakt</p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+    <section id="popup">
+      <article>
+        <h2><span class="navn"> </span></h2>
+      </article>
+    </section>
+    <header></header>
+
+    <nav>
+      <button data-smag="alle">Alle</button>
+      <button data-smag="Sød">Sød</button>
+      <button data-smag="Sur">Sur</button>
+      <button data-smag="Bitter">Bitter</button>
+    </nav>
+    <main id="holder"></main>
+    <template>
+      <article>
+        <img src="" alt="" />
+        <div class="info">
+          <h2 class="navn"></h2>
+          <p class="ingredienser"></p>
+          <p class="smag"></p>
+        </div>
+      </article>
+    </template>
+    <footer>
+      <h1 id="hjem">@Crave</h1>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+<style>
+  main {
+    color: white;
+  }
+  img {
+    display: block;
+    max-width: 100%;
+  }
+  article {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2fr;
+    text-align: start;
+  }
+
+  article:nth-child(odd) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2fr;
+  }
+</style>
+
+<script>
+  const url = "https://cocktail-1a93.restdb.io/rest/cocktails";
+
+  const options = {
+    headers: {
+      "x-apikey": "631b1889fdc15b0265f17273",
+    },
+  };
+
+  // const, variabel og clicklytter
+
+  const main = document.querySelector("#holder");
+  const template = document.querySelector("template").content;
+  const header = document.querySelector("header");
+
+  let filter = "alle";
+
+  const filtrerKnapper = document.querySelectorAll("nav button");
+  filtrerKnapper.forEach((knap) =>
+    knap.addEventListener("click", filtrerCocktail)
+  );
+
+  // filtrer funktion    kig her dataset.navn - korrekt?
+
+  function filtrerCocktail() {
+    filter = this.dataset.smag;
+    hentCocktailData();
+
+    header.textContent = this.textContent;
+  }
+
+  // hent cocktail data
+
+  async function hentCocktailData() {
+    const resspons = await fetch(url, options);
+    const json = await resspons.json();
+
+    vis(json);
+  }
+
+  // vis cocktail data
+
+  function vis(json) {
+    console.log(json);
+    main.textContent = "";
+    json.forEach((json) => {
+      if (filter == json.smag || filter == "alle") {
+        const klon = template.cloneNode(true);
+        // klon.querySelector("img").src = "" + json.img;
+        klon.querySelector(".navn").textContent = json.navn;
+        klon.querySelector(".ingredienser").textContent = json.ingredienser;
+        klon.querySelector(".smag").textContent = json.smag;
+        klon
+          .querySelector("article")
+          .addEventListener("click", () => visInfo(json));
+        main.appendChild(klon);
+      }
+    });
+  }
+
+  // popup info
+
+  function visInfo(json) {
+    popup.style.display = "block";
+    popup.querySelector("img").src = "" + json.img;
+    popup.querySelector(".navn").textContent = json.navn;
+    popup.querySelector(".ingredienser").textContent = json.ingredienser;
+    popup.querySelector(".smag").textContent = json.smag;
+  }
+  // luk popup
+  // document
+  //   .querySelector("#luk")
+  //   .addEventListener("click", () => (popup.style.display = "none"));
+
+  hentCocktailData();
+</script>

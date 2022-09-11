@@ -1,0 +1,87 @@
+/******** css-variabler *********/
+html {
+    --bg-color: rgb(65, 65, 65);
+    font-family: italic;
+}
+img {
+    width: 100%;
+    height: auto;
+  }
+body {
+    background-color: var(--bg-color);
+}
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: var(--bg-color);
+    margin: 0px 5px 0px 5px;
+}
+header p {
+    color: white;
+}
+.logo{
+    width: 84px;
+}
+#hjem {
+    font: italic;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1.6rem;
+    background-color: var(--bg-color);
+}
+/* mouse-over */
+.toggle-btn a:hover {
+    color: #b0b0b0;
+}
+.main-menu a:hover {
+    color: #ffffff;
+}
+.main-menu ul {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+    padding: 0;
+    text-align: end;
+}
+
+/* burgermenu */
+.toggle-btn {
+    border: none;
+    cursor: pointer;
+    display: none;
+
+    font: italic;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1.6rem;
+    background-color: rgb(65, 65, 65);
+}
+
+
+@media (max-width: 600px) {
+.logo{
+    width: 50px;
+    }
+.toggle-btn {
+    display: block; 
+    }
+.main-menu {
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    }
+.main-menu ul {
+    display: none; 
+    }
+.main-menu.shown ul {
+    display: flex;
+    flex-flow: column;
+    }
+header :active {
+    background-color: #3f3f3f;
+    color: white;
+    }
+}
