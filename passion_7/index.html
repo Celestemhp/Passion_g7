@@ -1,68 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="generel.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="generel.css" />
     <title>Passion</title>
     <style>
-        img {
-            max-width: 900px;
-            align-self: center;
-        }
-        main section {
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            color: white;
-        }
+      section {
+        color: white;
+      }
+
+      #section_gin {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        color: white;
+      }
+
+      .billede_gin {
+        grid-column: 2/2;
+        align-items: center;
+        grid-row: 1/1;
+        max-width: 300px;
+      }
+
+      .tekst_gin {
+        grid-column: 3/4;
+        grid-row: 1/2;
+        color: rgb(255, 255, 255);
+      }
     </style>
-</head>
-<body>
-        <header>
-            <div class="logo" id="hjem">
-                <a href="index.html">
-                  <img src="logo.svg" alt="logo">
-                </a>
-              </div>
-            <nav class="main-menu">
-                <div class="toggle-btn">Menu</div>        
-                <ul>
-                    <li class="active">
-                        <a href="index.html">
-                            <p>Hjem</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="index.html">
-                            <p>Om</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="cocktails.html">
-                            <p>Opskrifter</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="index.html">
-                            <p>Kontakt</p>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
+  </head>
+  <body>
+    <header>
+      <div class="logo" id="hjem">
+        <a href="index.html">
+          <img src="logo.svg" alt="logo" />
+        </a>
+      </div>
+      <nav class="main-menu">
+        <div class="toggle-btn">Menu</div>
+        <ul>
+          <li class="active">
+            <a href="index.html">
+              <p>Hjem</p>
+            </a>
+          </li>
+          <li>
+            <a href="index.html">
+              <p>Om</p>
+            </a>
+          </li>
+          <li>
+            <a href="cocktails.html">
+              <p>Opskrifter</p>
+            </a>
+          </li>
+          <li>
+            <a href="index.html">
+              <p>Kontakt</p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
     <main>
-        <section>
-            <img src="gin.png" alt="gin">
-            <h1>GIN</h1>
-            <p>Alt dette skal byttes ud med Mads´ kodning, bortset fra header og footer.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, possimus accusamus, repellat esse voluptatum cumque quas obcaecati ducimus, sit illo veniam odio debitis unde dignissimos perferendis? Voluptatum tempore dolores officiis hic. Ducimus excepturi tempora distinctio fugit officiis error ratione ab dignissimos maxime, quibusdam enim neque exercitationem, doloremque suscipit beatae dolores.</p>
-        </section>
-    <footer>
+      <section>
+        <h2>Grundlæggende UX</h2>
+        <article id="section_gin">
+          <div class="tekst_gin">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu fringilla sapien. Proin porta iaculis ex, ac finibus purus. Nulla eu porttitor ipsum. Morbi lacus diam, dictum aliquet venenatis sed, semper eu dui. In nec tempor erat. Proin eleifend tortor ut nisi mollis scelerisque. Duis est ante, placerat non sodales ut, iaculis non arcu. Donec blandit, risus ut euismod placerat, nisi libero vestibulum ex, et pulvinar mauris leo quis velit. Pellentesque dignissim scelerisque dui eget facilisis. Donec in est finibus, lacinia nisi eu, faucibus augue. Nullam volutpat leo vel fermentum egestas. Nulla ac ligula vestibulum, tincidunt arcu eu, malesuada massa. Nam ultrices massa dui, vel finibus lectus mollis sit amet. Sed eget congue enim. Donec in ex libero. Etiam felis
+              sapien, mattis vel maximus at, congue consequat neque. Donec vitae semper urna. Donec eget volutpat arcu. Phasellus sed ultrices risus, ut scelerisque leo. Maecenas at tellus scelerisque, mollis odio non, malesuada metus. Ut ac sodales sem. Aliquam sodales ut sem vel tincidunt. In elit enim, efficitur at odio at, ultricies varius quam. Fusce ex sapien, tempus non sollicitudin ultricies, elementum at nunc.
+            </p>
+          </div>
+
+          <div class="billede_gin">
+            <img src="gin.jpg" />
+          </div>
+        </article>
+      </section>
+
+      <footer>
         <h1 id="hjem">@Crave</h1>
-    </footer>
+      </footer>
     </main>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
