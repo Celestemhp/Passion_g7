@@ -4,7 +4,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Passion</title>
+    <title>Cocktails</title>
+    <link rel="stylesheet" href="generel.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <section id="popup">
@@ -15,20 +22,51 @@
         <p class="oprindelse"></p>
       </article>
     </section>
-    <header></header>
+    <header>
+      <div class="logo" id="hjem">
+        <a href="index.html">
+          <img src="/images/logo.svg" alt="logo" />
+        </a>
+      </div>
+      <nav class="main-menu">
+        <div class="toggle-btn">Menu</div>
+        <ul>
+          <li class="active">
+            <a href="index.html">
+              <p>Hjem</p>
+            </a>
+          </li>
+          <li>
+            <a href="index.html">
+              <p>Om</p>
+            </a>
+          </li>
+          <li>
+            <a href="cocktails.html">
+              <p>Opskrifter</p>
+            </a>
+          </li>
+          <li>
+            <a href="index.html">
+              <p>Kontakt</p>
+            </a>
+          </li>
+        </ul>
+      </nav></header>
+    <h1>Alle</h1>
+    <div class="nav2">
     <nav>
       <button data-smag="alle">Alle</button>
       <button data-smag="Sød">Sød</button>
       <button data-smag="Sur">Sur</button>
       <button data-smag="Bitter">Bitter</button>
     </nav>
-    <h1>Alle</h1>
+    </div>
     <main id="holder"></main>
     <template>
-      <img src="/images/cocktail.png" alt="" />
+      <img src="" alt="" />
       <article>
         <h2 class="navn"></h2>
-        <h3>Smag: <span class="smag"></span></h3>
         <p class="beskrivelse"></p>
         <h3>Ingredienser:</h3>
         <ul>
@@ -38,12 +76,30 @@
           <li class="ingredient4"></li>
           <li class="ingredient5"></li>
         </ul>
+        <button class="clickoprindelse">Oprindelse</button>
       </article>
     </template>
+     <script src="script.js"></script>
   </body>
 </html>
 
 <style>
+
+img {
+  padding-top: 4%;
+}
+
+.clickoprindelse {
+  font-family: "Source Sans Pro", sans-serif;
+  text-decoration: underline;
+  font-size: 25px;
+  border: none;
+  background-color: black;
+  cursor: pointer;
+  
+}
+
+
   #popup {
     position: fixed;
     left: 0;
@@ -86,12 +142,6 @@
     margin: 5%;
   }
 
-  p,
-  h1,
-  h2,
-  h3 {
-    color: white;
-  }
   h1 {
     text-align: center;
     letter-spacing: 2px;
@@ -101,26 +151,24 @@
     background-color: black;
   }
 
-  nav {
-    display: flex;
+  .nav2 {
+    display: grid;
+    align-content: center;
     justify-content: center;
-    background-color: rgb(36, 33, 33);
+    background-color: black;
     width: 100vw;
-    height: 14vh;
+    height: 15vh;
   }
 
-  button {
-    cursor: pointer;
-    font-size: 20px;
-    font-weight: 400;
-    letter-spacing: 2px;
-    background-color: rgb(36, 33, 33);
-    color: aliceblue;
+  .nav2 button {
+    padding: 10px;
     border: none;
-    padding: 3%;
-    transition: all 0.5s ease 0s;
+    background-color: black;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
   }
-
+  
   button:hover {
     color: rgb(255, 236, 148);
   }
@@ -130,9 +178,7 @@
     min-width: 50%;
   }
   @media (min-width: 1000px) {
-    img {
-      max-width: 100%;
-    }
+    
   }
 </style>
 
@@ -184,7 +230,7 @@
     json.forEach((json) => {
       if (filter == json.smag || filter == "alle") {
         const klon = template.cloneNode(true);
-        // klon.querySelector("img").src = "" + json.img;
+        klon.querySelector("img").src = "" + json.billedenavn;
         klon.querySelector(".navn").textContent = json.navn;
         klon.querySelector(".beskrivelse").textContent = json.beskrivelse;
         klon.querySelector(".ingredient1").textContent = json.ingredient1;
@@ -192,9 +238,9 @@
         klon.querySelector(".ingredient3").textContent = json.ingredient3;
         klon.querySelector(".ingredient4").textContent = json.ingredient4;
         klon.querySelector(".ingredient5").textContent = json.ingredient5;
-        klon.querySelector(".smag").textContent = json.smag;
+        // klon.querySelector(".smag").textContent = json.smag;
         klon
-          .querySelector("article")
+          .querySelector(".clickoprindelse")
           .addEventListener("click", () => visOprindelse(json));
         main.appendChild(klon);
       }

@@ -3,6 +3,23 @@ html {
   --bg-color: rgb(42, 42, 42);
   font-family: italic;
 }
+
+p,
+h1,
+h2,
+h3,
+ul,
+button {
+  font-family: "Source Sans Pro", sans-serif;
+  letter-spacing: 1px;
+  color: #ffffff;
+}
+
+p {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 20px;
+}
+
 img {
   width: 100%;
   height: auto;
