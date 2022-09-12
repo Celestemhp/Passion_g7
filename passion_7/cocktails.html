@@ -5,94 +5,97 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Passion</title>
-    <link rel="stylesheet" href="generel.css">
   </head>
   <body>
-    <header>
-        <div class="logo" id="hjem">
-          <a href="index.html">
-            <img src="logo.svg" alt="logo">
-          </a>
-        </div>
-        <nav class="main-menu">
-            <div class="toggle-btn">Menu</div>        
-            <ul>
-                <li class="active">
-                    <a href="index.html">
-                        <p>Hjem</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="index.html">
-                        <p>Om</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="cocktails.html">
-                        <p>Opskrifter</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="index.html">
-                        <p>Kontakt</p>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-
-
-
     <section id="popup">
-      <article>
-        <h2><span class="navn"> </span></h2>
-      </article>
+      <article></article>
     </section>
     <header></header>
-
     <nav>
       <button data-smag="alle">Alle</button>
       <button data-smag="Sød">Sød</button>
       <button data-smag="Sur">Sur</button>
       <button data-smag="Bitter">Bitter</button>
     </nav>
+    <h1>Alle</h1>
     <main id="holder"></main>
     <template>
+      <img src="/billeder/cocktail.png" alt="" />
       <article>
-        <img src="" alt="" />
-        <div class="info">
-          <h2 class="navn"></h2>
-          <p class="ingredienser"></p>
-          <p class="smag"></p>
-        </div>
+        <h2 class="navn"></h2>
+        <ul>
+          <li class="ingredienser"></li>
+          <li class="smag"></li>
+        </ul>
       </article>
     </template>
-    <footer>
-      <h1 id="hjem">@Crave</h1>
-    </footer>
     <script src="script.js"></script>
   </body>
 </html>
 
 <style>
-  main {
-    color: white;
-  }
-  img {
-    display: block;
-    max-width: 100%;
-  }
-  article {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 2fr;
-    text-align: start;
+  ul {
+    color: aliceblue;
   }
 
-  article:nth-child(odd) {
+  main {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 2fr;
+    column-gap: 3%;
+    row-gap: 8%;
+    margin: 5%;
+  }
+
+  article {
+  }
+
+  p,
+  h1,
+  h2,
+  h3 {
+    color: aliceblue;
+  }
+  h1 {
+    text-align: center;
+    letter-spacing: 2px;
+  }
+
+  body {
+    background-color: black;
+  }
+
+  nav {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(36, 33, 33);
+    width: 100vw;
+    height: 14vh;
+  }
+
+  button {
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    background-color: rgb(36, 33, 33);
+    color: aliceblue;
+    border: none;
+    padding: 3%;
+    transition: all 0.5s ease 0s;
+  }
+
+  button:hover {
+    color: rgb(255, 236, 148);
+  }
+
+  img {
+    max-width: 100%;
+    min-width: 50%;
+  }
+  @media (min-width: 1000px) {
+    img {
+      max-width: 100%;
+    }
   }
 </style>
 
@@ -109,7 +112,7 @@
 
   const main = document.querySelector("#holder");
   const template = document.querySelector("template").content;
-  const header = document.querySelector("header");
+  const header = document.querySelector("h1");
 
   let filter = "alle";
 
