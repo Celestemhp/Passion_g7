@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="generel.css" />
     <title>Passion</title>
     <style>
+      h2 {
+        text-align: center;
+      }
+
       section {
         color: white;
       }
@@ -25,9 +29,31 @@
       }
 
       .tekst_gin {
-        grid-column: 3/4;
+        grid-column: 3/5;
         grid-row: 1/2;
         color: rgb(255, 255, 255);
+      }
+
+      #section_Animation {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 2fr;
+        gap: 20px;
+      }
+
+      .tekst_Animation {
+        grid-column: 2/4;
+        grid-row: 1/2;
+      }
+
+      .billede_1 {
+        grid-column: 2/3;
+        grid-row: 2/2;
+      }
+
+      .billede_2 {
+        grid-column: 3/4;
+        grid-row: 2/2;
       }
     </style>
   </head>
@@ -67,7 +93,7 @@
 
     <main>
       <section>
-        <h2>Grundlæggende UX</h2>
+        <h2>Crave</h2>
         <article id="section_gin">
           <div class="tekst_gin">
             <p>
@@ -79,6 +105,18 @@
           <div class="billede_gin">
             <img src="gin.jpg" />
           </div>
+        </article>
+      </section>
+      <section>
+        <article id="section_Animation">
+          <div class="tekst_Animation">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu fringilla sapien. Proin porta iaculis ex, ac finibus purus. Nulla eu porttitor ipsum. Morbi lacus diam, dictum aliquet venenatis sed, semper eu dui. In nec tempor erat. Proin eleifend tortor ut nisi mollis scelerisque. Duis est ante, placerat non sodales ut, iaculis non arcu. Donec blandit, risus ut euismod placerat, nisi libero vestibulum ex, et pulvinar mauris leo quis velit. Pellentesque dignissim scelerisque dui eget facilisis. Donec in est finibus, lacinia nisi eu, faucibus augue. Nullam volutpat leo vel fermentum egestas. Nulla ac ligula vestibulum, tincidunt arcu eu, malesuada massa. Nam ultrices massa dui, vel finibus lectus mollis sit amet. Sed eget congue enim. Donec in ex libero. Etiam felis
+              sapien, mattis vel maximus at, congue consequat neque. Donec vitae semper urna. Donec eget volutpat arcu. Phasellus sed ultrices risus, ut scelerisque leo. Maecenas at tellus scelerisque, mollis odio non, malesuada metus. Ut ac sodales sem. Aliquam sodales ut sem vel tincidunt. In elit enim, efficitur at odio at, ultricies varius quam. Fusce ex sapien, tempus non sollicitudin ultricies, elementum at nunc.
+            </p>
+          </div>
+          <img class="billede_1" src="gin.png" alt="Spil" />
+          <img class="billede_2" src="gin.png" alt="Spilskitse" />
         </article>
       </section>
 
