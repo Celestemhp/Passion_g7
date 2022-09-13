@@ -17,9 +17,10 @@
     <section id="popup">
       <div id="luk">&#x2715</div>
       <article>
+        <div class="popup_article">
         <h2 class="navn"></h2>
-        <h3>Oprindelse:</h3>
         <p class="oprindelse"></p>
+        </div>
       </article>
     </section>
     <header>
@@ -64,8 +65,8 @@
     </div>
     <main id="holder"></main>
     <template>
-      <img src="" alt="" />
       <article>
+        <img src="" alt="" />
         <h2 class="navn"></h2>
         <p class="beskrivelse"></p>
         <h3>Ingredienser:</h3>
@@ -85,9 +86,19 @@
 
 <style>
 
+
+
+
+
+.popup_article {
+    margin: 3%;
+  }
+
 img {
   padding-top: 4%;
 }
+
+
 
 .clickoprindelse {
   font-family: "Source Sans Pro", sans-serif;
@@ -99,35 +110,36 @@ img {
   
 }
 
-
   #popup {
     position: fixed;
     left: 0;
     top: 0;
     width: 100vw;
     height: 100vh;
-    background-color: #3f3f3f;
+    background-color: black;
     overflow: scroll;
     display: none;
     
   }
 
   #popup article {
-    width: 80vw;
+    width: 50vw;
     height: auto;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
     margin: 10rem auto;
-    border-radius: 10px;
+    border-top-left-radius: 40px;
+    border-bottom-right-radius: 40px;
     border: 4px solid;
-    background-color: black;
+    background-color: #3f3f3f;
   }
  
   #luk {
     position: fixed;
     padding: 1em;
     cursor: pointer;
+    color: white;
   }
   ul {
     color: white;
@@ -136,10 +148,10 @@ img {
 
   main {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 3%;
-    row-gap: 8%;
     margin: 5%;
+    row-gap: 2%;
+    
+    
   }
 
   h1 {
@@ -178,7 +190,13 @@ img {
     min-width: 50%;
   }
   @media (min-width: 1000px) {
-    
+    main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 5%;
+    row-gap: 3%;
+    margin: 5%;
+  }
   }
 </style>
 
@@ -204,7 +222,7 @@ img {
     knap.addEventListener("click", filtrerCocktail)
   );
 
-  // filtrer funktion    kig her dataset.navn - korrekt?
+  // filtrer funktion
 
   function filtrerCocktail() {
     filter = this.dataset.smag;
