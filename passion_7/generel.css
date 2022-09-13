@@ -13,6 +13,7 @@ button {
   font-family: "Source Sans Pro", sans-serif;
   letter-spacing: 1px;
   color: #ffffff;
+  list-style: none;
 }
 
 p {
