@@ -19,18 +19,45 @@
 
       section {
         color: white;
+        text-decoration: none;
       }
 
       #section_gin {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
         color: white;
       }
+
       .billede_gin {
-        grid-column: 2/2;
+        grid-column: 3/4;
         align-items: center;
-        justify-content: center;
-        padding-bottom: 55px;
+        grid-row: 1/1;
+        max-width: 300px;
+      }
+
+      .tekst_gin {
+        grid-column: 2/2;
+        grid-row: 1/2;
+        color: rgb(255, 255, 255);
+        padding-right: 20px;
+        font-size: 30px;
+        padding-bottom: 200px;
+      }
+      .knap {
+        text-align: center;
+        font-size: 15px;
+      }
+
+      .knap a {
+        color: rgb(0, 0, 0);
+        font-family: "Open Sans";
+        font-weight: 700;
+        text-decoration: none;
+        display: inline-block;
+        background-color: #ffffff;
+        border-radius: 5px;
+        padding: 8px 25px;
+        margin: 10px 0px;
       }
 
       #section_gin2 {
@@ -51,6 +78,7 @@
         grid-row: 1/2;
         color: rgb(255, 255, 255);
         padding-right: 20px;
+        padding-bottom: 300px;
       }
 
       #section_gin3 {
@@ -158,48 +186,61 @@
         <h2><a href="index.html">Crave</a></h2>
 
         <article id="section_gin">
-          <div class="billede_gin">
-            <img src="/images/cocktails.jpg" />
+          <div class="tekst_gin">
+            <h2>A Delicious Delicate Fruity Gin</h2>
+            <div class="knap">
+              <a href="cocktail.html">View Our Gins</a>
+            </div>
           </div>
+
+          <div class="billede_gin"><img src="/images/animeretgin.jpeg" /></div>
         </article>
       </section>
 
       <section>
         <article id="section_gin2">
           <div class="tekst_gin2">
-            <h2>Om vores gin</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu fringilla sapien. Proin porta iaculis ex, ac finibus purus. Nulla eu porttitor ipsum. Morbi lacus diam, dictum aliquet venenatis sed, semper eu dui. In nec tempor erat. Proin eleifend tortor ut nisi mollis scelerisque. Duis est ante, placerat non sodales ut, iaculis non arcu. Donec blandit, risus ut euismod placerat, nisi libero vestibulum ex, et pulvinar mauris leo quis velit. Pellentesque dignissim scelerisque dui eget facilisis. Donec in est finibus, lacinia nisi eu, faucibus augue.</p>
+            <h2>Malfy Gin Rosa</h2>
+            <h2>____________________________</h2>
+
+            <ul>
+              <li>
+                <p>Flavour</p>
+              </li>
+              <li>
+                <p>Rich,Fresh Citrus, Grapefruit, With Rich And Long Juniper Finish</p>
+              </li>
+            </ul>
           </div>
 
-          <div class="billede_gin2"><img src="/images/animeretgin.jpeg"" /></div>
+          <div class="billede_gin2"><img src="/images/gin.jpg" /></div>
         </article>
       </section>
       <section>
         <article id="section_gin3">
           <div class="tekst_gin3">
-            <h2>Opskrifter på drinks</h2>
+            <h2>Gin Rose Gin & Tonic</h2>
+            <h2>____________________________</h2>
             <ul>
               <li>
-                <p>Indsæt noget her</p>
+                <p>50ML Malfy Gin Rosa</p>
               </li>
               <li>
-                <p>Indsæt noget her</p>
+                <p>150ML Fever Tree</p>
               </li>
               <li>
-                <p>Indsæt noget her</p>
+                <p>Mediterranean Tonic</p>
               </li>
               <li>
-                <p>Indsæt noget her</p>
-              </li>
-              <li>
-                <p>Indsæt noget her</p>
+                <p>Pink Grapefruit Wheel & Rosemarry Sprig</p>
               </li>
             </ul>
+            <div class="knap">
+              <a href="cocktail.html">View Cocktail</a>
+            </div>
           </div>
 
-          <div class="billede_gin3">
-            <img src="/images/gin.jpg" />
-          </div>
+          <div class="billede_gin3"><img src="/passion_7/tomcollins.jpg" /></div>
         </article>
       </section>
 
