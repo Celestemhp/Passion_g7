@@ -7,33 +7,103 @@
     <link rel="stylesheet" href="generel.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600&display=swap" rel="stylesheet" />
     <title>Passion</title>
     <style>
+      body {
+        background-color: black;
+      }
+      h2 {
+        text-align: center;
+      }
+
       section {
         color: white;
       }
 
       #section_gin {
         display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        color: white;
+      }
+      .billede_gin {
+        grid-column: 2/2;
+        align-items: center;
+        justify-content: center;
+        max-width: 500px;
+      }
+
+      #section_gin2 {
+        display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         color: white;
       }
 
-      .billede_gin {
+      .billede_gin2 {
+        grid-column: 3/4;
+        align-items: center;
+        grid-row: 1/1;
+        max-width: 300px;
+      }
+
+      .tekst_gin2 {
+        grid-column: 2/2;
+        grid-row: 1/2;
+        color: rgb(255, 255, 255);
+      }
+
+      #section_gin3 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        color: white;
+      }
+
+      .billede_gin3 {
         grid-column: 2/2;
         align-items: center;
         grid-row: 1/1;
         max-width: 300px;
       }
 
-      .tekst_gin {
+      .tekst_gin3 {
         grid-column: 3/4;
         grid-row: 1/2;
         color: rgb(255, 255, 255);
+      }
+
+      /*Mobile*/
+      @media (max-width: 600px) {
+        #section_gin {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          color: white;
+        }
+        .billede_gin {
+          grid-column: 2/2;
+          align-items: center;
+          justify-content: center;
+          max-width: 500px;
+        }
+
+        #section_gin2 {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          color: white;
+        }
+
+        .billede_gin2 {
+          grid-column: 2/3;
+          align-items: center;
+          grid-row: 1/1;
+          max-width: 300px;
+        }
+
+        .tekst_gin2 {
+          grid-column: 3/4;
+          grid-row: 1/2;
+          color: rgb(255, 255, 255);
+          padding: 100px;
+        }
       }
     </style>
   </head>
@@ -73,33 +143,35 @@
 
     <main>
       <section>
-        <h2>Grundlæggende UX</h2>
+        <h2><a href="index.html">Crave</a></h2>
+
         <article id="section_gin">
-          <div class="tekst_gin">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-              eu fringilla sapien. Proin porta iaculis ex, ac finibus purus.
-              Nulla eu porttitor ipsum. Morbi lacus diam, dictum aliquet
-              venenatis sed, semper eu dui. In nec tempor erat. Proin eleifend
-              tortor ut nisi mollis scelerisque. Duis est ante, placerat non
-              sodales ut, iaculis non arcu. Donec blandit, risus ut euismod
-              placerat, nisi libero vestibulum ex, et pulvinar mauris leo quis
-              velit. Pellentesque dignissim scelerisque dui eget facilisis.
-              Donec in est finibus, lacinia nisi eu, faucibus augue. Nullam
-              volutpat leo vel fermentum egestas. Nulla ac ligula vestibulum,
-              tincidunt arcu eu, malesuada massa. Nam ultrices massa dui, vel
-              finibus lectus mollis sit amet. Sed eget congue enim. Donec in ex
-              libero. Etiam felis sapien, mattis vel maximus at, congue
-              consequat neque. Donec vitae semper urna. Donec eget volutpat
-              arcu. Phasellus sed ultrices risus, ut scelerisque leo. Maecenas
-              at tellus scelerisque, mollis odio non, malesuada metus. Ut ac
-              sodales sem. Aliquam sodales ut sem vel tincidunt. In elit enim,
-              efficitur at odio at, ultricies varius quam. Fusce ex sapien,
-              tempus non sollicitudin ultricies, elementum at nunc.
-            </p>
+          <div class="billede_gin">
+            <img src="/images/gin.jpg" />
+          </div>
+        </article>
+      </section>
+
+      <section>
+        <article id="section_gin2">
+          <div class="tekst_gin2">
+            <h2>Om vores gin</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu fringilla sapien. Proin porta iaculis ex, ac finibus purus. Nulla eu porttitor ipsum. Morbi lacus diam, dictum aliquet venenatis sed, semper eu dui. In nec tempor erat. Proin eleifend tortor ut nisi mollis scelerisque. Duis est ante, placerat non sodales ut, iaculis non arcu. Donec blandit, risus ut euismod placerat, nisi libero vestibulum ex, et pulvinar mauris leo quis velit. Pellentesque dignissim scelerisque dui eget facilisis. Donec in est finibus, lacinia nisi eu, faucibus augue.</p>
           </div>
 
-          <div class="billede_gin">
+          <div class="billede_gin2">
+            <img src="/images/gin.jpg" />
+          </div>
+        </article>
+      </section>
+      <section>
+        <article id="section_gin3">
+          <div class="tekst_gin3">
+            <h2>Om vores gin</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu fringilla sapien. Proin porta iaculis ex, ac finibus purus. Nulla eu porttitor ipsum. Morbi lacus diam, dictum aliquet venenatis sed, semper eu dui. In nec tempor erat. Proin eleifend tortor ut nisi mollis scelerisque. Duis est ante, placerat non sodales ut, iaculis non arcu. Donec blandit, risus ut euismod placerat, nisi libero vestibulum ex, et pulvinar mauris leo quis velit. Pellentesque dignissim scelerisque dui eget facilisis. Donec in est finibus, lacinia nisi eu, faucibus augue.</p>
+          </div>
+
+          <div class="billede_gin3">
             <img src="/images/gin.jpg" />
           </div>
         </article>
