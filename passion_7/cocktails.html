@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cocktails</title>
+
+    <!-- Fonts -->
     <link rel="stylesheet" href="generel.css">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -122,28 +124,65 @@
 </html>
 
 <style>
-
-
-article {
-  text-align: center;
-}
-
-.popup_article h3 {
-  font-size: 25px;
-}
-
-.popup_article h1 {
-  font-size: 35px;
-}
-.popup_article {
-  text-align: start;
-    margin: 3%;
+body {
+  background-color: black;
   }
 
 img {
-  padding-top: 4%;
- 
-}
+  max-width: 400px;
+  min-width: 50%;
+  }
+
+
+/* Filtrerings menu styling + hover effect på button */
+
+.nav2 {
+  display: grid;
+  justify-content: center;
+  width: 100vw;
+  height: 15vh;
+  }
+.nav2 button {
+  margin-right: 5px;
+  padding: 10px;
+  border: 2px solid;
+  border-radius: 20%;
+  border-color: #A0806A;
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  }
+button:hover {
+  color:white;
+  background-color: #A0806A ;
+  transition: 0.3s;
+  }
+
+main {
+  display: grid;
+  margin: 5%;
+  row-gap: 2%;
+  }
+
+
+  /* Cocktail article styling  */
+
+article {
+  text-align: center;
+  }
+
+h1 {
+  text-align: center;
+  letter-spacing: 2px;
+  }
+
+h2 {
+  font-size: 30px;
+  }
+
+
+  /* Ingrediens button styling */
 
 .clickingredienser {
   padding: 3%;
@@ -155,26 +194,60 @@ img {
   cursor: pointer;
 }
 
-#popup {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: black;
-    overflow: scroll;
-    display: none;
-    
-  }
-  #popup article {
-    width: 85vw;
-    
-    margin: 1rem auto;
-    border: 4px solid;
-    background-color: #3f3f3f;
-  }
 
-  
+/* popup vindue styling */
+
+#popup {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  overflow: scroll;
+  display: none;  
+}
+#popup article {
+  width: 85vw;
+  margin: 1rem auto;
+  border: 4px solid;
+  background-color: #3f3f3f;
+}
+
+#popup article img {
+  width: 100%;
+  padding-top: 6%;
+}
+#luk {
+  position: fixed;
+  padding: auto;
+  cursor: pointer;
+  color: white;
+}
+
+
+/* Popup tekst tyling */
+
+.popup_article {
+  text-align: start;
+  margin: 3%;
+}
+.popup_article h1 {
+  font-size: 35px;
+}
+
+.popup_article h3 {
+  font-size: 25px;
+}
+
+ul {
+  color: white;
+  font-size: 20px;
+}
+
+
+  /* animation til popupvindue (drop) */
+
 .drop {
   animation-name: drop_kf;
   animation-duration: 1s;
@@ -182,78 +255,15 @@ img {
   animation-iteration-count: 1;
 }
 
-
-  @keyframes drop_kf {
-    0% {transform:translateY(-750px) ;}
-    100% {transform: translateY(0px);}
-  }
-
-  
-  #popup article img {
-    width: 100%;
-  }
- 
-  #luk {
-    position: fixed;
-    padding: auto;
-    cursor: pointer;
-    color: white;
-  }
-  ul {
-    color: white;
-    font-size: 20px;
-  }
-
-  main {
-    display: grid;
-    margin: 5%;
-    row-gap: 2%;
-  }
-
-  h1 {
-    text-align: center;
-    letter-spacing: 2px;
-  }
-h2 {
-  font-size: 30px;
+@keyframes drop_kf {
+  0% {transform:translateY(-750px) ;}
+  100% {transform: translateY(0px);}
 }
 
-  body {
-    background-color: black;
-  }
 
-  .nav2 {
-    display: grid;
-    justify-content: center;
-    width: 100vw;
-    height: 15vh;
+/* Responsivt cocktail */
 
-  }
- 
-  .nav2 button {
-  margin-right: 5px;
-   padding: 10px;
-   border: 2px solid;
-   border-radius: 20%;
-   border-color: #A0806A;
-   background-color: black;
-   color: white;
-   font-size: 20px;
-   cursor: pointer;
-  }
-
-  
-  button:hover {
-  color:white;
-  background-color: #A0806A ;
-  transition: 0.3s;
-  }
-
-  img {
-    max-width: 400px;
-    min-width: 50%;
-  }
-  @media (min-width: 1000px) {
+@media (min-width: 1000px) {
     main {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -263,9 +273,11 @@ h2 {
   }
   }
 
-  @media (min-width: 700px)
+
+  /* Responsiv popup vindue */
+@media (min-width: 700px)
   {
-#popup {
+  #popup {
     position: fixed;
     left: 0;
     top: 0;
@@ -281,6 +293,7 @@ h2 {
     height: auto;
     margin: 1rem auto;
     border: 4px solid;
+    border-color: #A0806A;
     background-color: #3f3f3f;
   }
   }
@@ -295,6 +308,7 @@ h2 {
     },
   };
 
+
   // const, variabel og clicklytter
 
   const main = document.querySelector("#holder");
@@ -308,7 +322,8 @@ h2 {
     knap.addEventListener("click", filtrerCocktail)
   );
 
-  // filtrer funktion
+
+  // filtrer funktion sød, sur, bitter
 
   function filtrerCocktail() {
     filter = this.dataset.smag;
@@ -316,6 +331,7 @@ h2 {
 
     header.textContent = this.textContent;
   }
+
 
   // hent cocktail data
 
@@ -325,6 +341,7 @@ h2 {
 
     vis(json);
   }
+
 
   // vis cocktail data
 
@@ -344,6 +361,7 @@ h2 {
     });
   }
 
+
   // popup info
 
   function visIngredienser(json) {
@@ -358,16 +376,10 @@ h2 {
   }
 
 
-  
   // luk popup
   document
     .querySelector("#luk")
     .addEventListener("click", () => (popup.style.display = "none"));
 
   hentCocktailData();
-
-
-
-
-  
 </script>
