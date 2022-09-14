@@ -15,9 +15,9 @@
   </head>
   <body>
     <section id="popup">
-      <div id="luk">&#x2715</div>
-      <article>
-        <div class="popup_article">
+      <article class="drop">
+        <div class="popup_article" >
+          <div id="luk">&#x2715</div>
           <img src="" alt="" />
         <h1 class="navn"></h1>
         <h3>Ingredienser:</h3>
@@ -62,7 +62,7 @@
           </li>
         </ul>
       </nav></header>
-    <h1>Alle</h1>
+    <h1>Cocktails</h1>
     <div class="nav2">
     <nav>
       <button data-smag="alle">Alle</button>
@@ -122,13 +122,18 @@
 </html>
 
 <style>
-button p {}
+
+
 article {
   text-align: center;
 }
 
+.popup_article h3 {
+  font-size: 25px;
+}
+
 .popup_article h1 {
-  font-size: 30px;
+  font-size: 35px;
 }
 .popup_article {
   text-align: start;
@@ -150,7 +155,7 @@ img {
   cursor: pointer;
 }
 
-  #popup {
+#popup {
     position: fixed;
     left: 0;
     top: 0;
@@ -161,23 +166,36 @@ img {
     display: none;
     
   }
-
   #popup article {
-    width: 38vw;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+    width: 85vw;
+    
     margin: 1rem auto;
-    border-top-left-radius: 40px;
-    border-bottom-right-radius: 40px;
     border: 4px solid;
     background-color: #3f3f3f;
+  }
+
+  
+.drop {
+  animation-name: drop_kf;
+  animation-duration: 1s;
+  animation-direction: alternate;
+  animation-iteration-count: 1;
+}
+
+
+  @keyframes drop_kf {
+    0% {transform:translateY(-750px) ;}
+    100% {transform: translateY(0px);}
+  }
+
+  
+  #popup article img {
+    width: 100%;
   }
  
   #luk {
     position: fixed;
-    padding: 1em;
+    padding: auto;
     cursor: pointer;
     color: white;
   }
@@ -209,6 +227,7 @@ h2 {
     justify-content: center;
     width: 100vw;
     height: 15vh;
+
   }
  
   .nav2 button {
@@ -243,6 +262,28 @@ h2 {
     margin: 5%;
   }
   }
+
+  @media (min-width: 700px)
+  {
+#popup {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    overflow: scroll;
+    display: none;
+    
+  }
+  #popup article {
+    width: 30vw;
+    height: auto;
+    margin: 1rem auto;
+    border: 4px solid;
+    background-color: #3f3f3f;
+  }
+  }
 </style>
 
 <script>
@@ -258,7 +299,7 @@ h2 {
 
   const main = document.querySelector("#holder");
   const template = document.querySelector("template").content;
-  const header = document.querySelector("h1");
+  
 
   let filter = "alle";
 
