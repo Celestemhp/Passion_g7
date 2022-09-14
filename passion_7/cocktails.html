@@ -18,7 +18,16 @@
       <div id="luk">&#x2715</div>
       <article>
         <div class="popup_article">
-        <h2 class="navn"></h2>
+          <img src="" alt="" />
+        <h1 class="navn"></h1>
+        <h3>Ingredienser:</h3>
+        <ul>
+          <li class="ingredient1"></li>
+          <li class="ingredient2"></li>
+          <li class="ingredient3"></li>
+          <li class="ingredient4"></li>
+          <li class="ingredient5"></li>
+        </ul>
         <p class="oprindelse"></p>
         </div>
       </article>
@@ -44,7 +53,7 @@
           </li>
           <li>
             <a href="cocktails.html">
-              <p>Opskrifter</p>
+              <p>Cocktails</p>
             </a>
           </li>
           <li>
@@ -69,15 +78,7 @@
         <img src="" alt="" />
         <h2 class="navn"></h2>
         <p class="beskrivelse"></p>
-        <h3>Ingredienser:</h3>
-        <ul>
-          <li class="ingredient1"></li>
-          <li class="ingredient2"></li>
-          <li class="ingredient3"></li>
-          <li class="ingredient4"></li>
-          <li class="ingredient5"></li>
-        </ul>
-        <button class="clickoprindelse">Oprindelse</button>
+        <button class="clickingredienser">Ingredienser</button>
       </article>
     </template>
      <script src="script.js"></script>
@@ -87,10 +88,15 @@
 <style>
 
 
+article {
+  text-align: center;
+}
 
-
-
+.popup_article h1 {
+  font-size: 30px;
+}
 .popup_article {
+  text-align: start;
     margin: 3%;
   }
 
@@ -98,18 +104,17 @@ img {
   padding-top: 4%;
 }
 
-
-
-.clickoprindelse {
-  font-family: "Source Sans Pro", sans-serif;
-  text-decoration: underline;
-  font-size: 25px;
-  border: none;
-  background-color: black;
+.clickingredienser {
+  font-size: 20px;
+  border: 2px solid;
+  border-color: #F9EFE1;
+  background-color: #A0806A;
   cursor: pointer;
-  
 }
 
+button {
+  text-align: center;
+}
   #popup {
     position: fixed;
     left: 0;
@@ -123,12 +128,12 @@ img {
   }
 
   #popup article {
-    width: 50vw;
+    width: 38vw;
     height: auto;
     display: flex;
     flex-direction: column;
     gap: 5px;
-    margin: 10rem auto;
+    margin: 1rem auto;
     border-top-left-radius: 40px;
     border-bottom-right-radius: 40px;
     border: 4px solid;
@@ -158,6 +163,9 @@ img {
     text-align: center;
     letter-spacing: 2px;
   }
+h2 {
+  font-size: 35px;
+}
 
   body {
     background-color: black;
@@ -173,12 +181,13 @@ img {
   }
 
   .nav2 button {
-    padding: 10px;
-    border: none;
-    background-color: black;
-    color: white;
-    font-size: 30px;
-    cursor: pointer;
+   padding: 10px;
+   border: solid;
+   border-color: #F9EFE1;
+   background-color: #A0806A;
+   color: white;
+   font-size: 30px;
+   cursor: pointer;
   }
   
   button:hover {
@@ -250,16 +259,9 @@ img {
         const klon = template.cloneNode(true);
         klon.querySelector("img").src = "" + json.billedenavn;
         klon.querySelector(".navn").textContent = json.navn;
-        klon.querySelector(".beskrivelse").textContent = json.beskrivelse;
-        klon.querySelector(".ingredient1").textContent = json.ingredient1;
-        klon.querySelector(".ingredient2").textContent = json.ingredient2;
-        klon.querySelector(".ingredient3").textContent = json.ingredient3;
-        klon.querySelector(".ingredient4").textContent = json.ingredient4;
-        klon.querySelector(".ingredient5").textContent = json.ingredient5;
-        // klon.querySelector(".smag").textContent = json.smag;
         klon
-          .querySelector(".clickoprindelse")
-          .addEventListener("click", () => visOprindelse(json));
+          .querySelector(".clickingredienser")
+          .addEventListener("click", () => visIngredienser(json));
         main.appendChild(klon);
       }
     });
@@ -267,15 +269,28 @@ img {
 
   // popup info
 
-  function visOprindelse(json) {
+  function visIngredienser(json) {
     popup.style.display = "block";
+    popup.querySelector("img").src = "" + json.billedenavn;
     popup.querySelector(".navn").textContent = json.navn;
-    popup.querySelector(".oprindelse").textContent = json.oprindelse;
+    popup.querySelector(".ingredient1").textContent = json.ingredient1;
+    popup.querySelector(".ingredient2").textContent = json.ingredient2;
+    popup.querySelector(".ingredient3").textContent = json.ingredient3;
+    popup.querySelector(".ingredient4").textContent = json.ingredient4;
+    popup.querySelector(".ingredient5").textContent = json.ingredient5;
   }
+
+
+  
   // luk popup
   document
     .querySelector("#luk")
     .addEventListener("click", () => (popup.style.display = "none"));
 
   hentCocktailData();
+
+
+
+
+  
 </script>
