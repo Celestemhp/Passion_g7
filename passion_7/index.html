@@ -35,26 +35,39 @@
 
       #section_gin {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+
         color: white;
       }
 
       .billede_gin {
-        grid-column: 3/4;
+        grid-column: 3/5;
         align-items: center;
         grid-row: 1/1;
-        max-width: 500px;
       }
 
       .tekst_gin {
         grid-column: 2/2;
         grid-row: 1/2;
         color: rgb(255, 255, 255);
-        padding-right: 20px;
         font-size: 30px;
-        padding-bottom: 50px;
-        border-width: 1.2px;
-        border-style: solid;
+        padding-top: 200px;
+      }
+      #section_gin2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        color: white;
+      }
+
+      .billede_gin2 {
+        grid-column: 2/2;
+        grid-row: 2/3;
+      }
+
+      .tekst_gin2 {
+        grid-column: 2/2;
+        grid-row: 1/3;
       }
       .knap {
         text-align: center;
@@ -72,54 +85,12 @@
         padding: 8px 25px;
         margin: 10px 0px;
       }
-
-      #section_gin2 {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        padding-top: 200px;
-        color: white;
-      }
-
-      .billede_gin2 {
-        grid-column: 3/4;
-        align-items: center;
-        grid-row: 1/1;
-        max-width: 300px;
-      }
-
-      .tekst_gin2 {
-        grid-column: 2/2;
-        grid-row: 1/2;
-        color: rgb(255, 255, 255);
-        padding-right: 20px;
-        padding-bottom: 300px;
-      }
-
-      #section_gin3 {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        color: white;
-      }
-
-      .billede_gin3 {
-        grid-column: 2/2;
-        align-items: center;
-        grid-row: 1/1;
-        max-width: 300px;
-      }
-
-      .tekst_gin3 {
-        grid-column: 3/4;
-        grid-row: 1/2;
-        color: rgb(255, 255, 255);
-      }
-
       /*Mobile*/
       @media (max-width: 600px) {
         #section_gin {
           display: grid;
           grid-template-columns: 1fr;
-          grid-template-rows: 1fr 1fr;
+          grid-template-rows: 1fr;
           color: white;
         }
         .billede_gin {
@@ -128,41 +99,21 @@
         }
         .tekst_gin {
           border-style: none;
+          font-size: 40px;
+          padding-top: 40px;
         }
-
         #section_gin2 {
           display: grid;
           grid-template-columns: 1fr;
-          grid-template-rows: 1fr 1fr;
+          grid-template-rows: 1fr;
           color: white;
         }
-
         .billede_gin2 {
           grid-column: 2/2;
-          grid-row: 1/3;
+          grid-row: 3/3;
         }
-
         .tekst_gin2 {
-          color: rgb(255, 255, 255);
-          grid-column: 1/2;
-          grid-row: 1/2;
-        }
-        #section_gin3 {
-          display: grid;
-          grid-template-columns: 1fr;
-          grid-template-rows: 1fr 1fr;
-          color: white;
-        }
-
-        .billede_gin3 {
-          grid-column: 2/2;
-          grid-row: 1/2;
-        }
-
-        .tekst_gin3 {
-          grid-column: 2/2;
-          grid-row: 1/2;
-          color: rgb(255, 255, 255);
+          border-style: none;
         }
       }
     </style>
@@ -207,9 +158,9 @@
 
         <article id="section_gin">
           <div class="tekst_gin">
-            <h2>A Delicious Delicate Fruity Gin</h2>
+            <h2>En Lækker Delikat Gin</h2>
             <div class="knap">
-              <a href="cocktails.html">View Our Gins</a>
+              <a href="cocktails.html">Se vores cocktails</a>
             </div>
           </div>
 
@@ -220,24 +171,6 @@
       <section>
         <article id="section_gin2">
           <div class="tekst_gin2">
-            <h3>Malfy Gin Rosa</h3>
-
-            <ul>
-              <li>
-                <p>Flavour</p>
-              </li>
-              <li>
-                <p>Rich,Fresh Citrus, Grapefruit, With Rich And Long Juniper Finish</p>
-              </li>
-            </ul>
-          </div>
-
-          <div class="billede_gin2"><img src="/images/gin.jpg" /></div>
-        </article>
-      </section>
-      <section>
-        <article id="section_gin3">
-          <div class="tekst_gin3">
             <h3>Gin Rose Gin & Tonic</h3>
 
             <ul>
@@ -255,11 +188,11 @@
               </li>
             </ul>
             <div class="knap">
-              <a href="cocktails.html">View Cocktail</a>
+              <a href="cocktails.html">Se cocktails</a>
             </div>
           </div>
 
-          <div class="billede_gin3"><img src="/passion_7/tomcollins.jpg" /></div>
+          <div class="billede_gin2"><img src="/images/cocktails.jpg" /></div>
         </article>
       </section>
 
