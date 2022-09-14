@@ -122,28 +122,57 @@
 </html>
 
 <style>
-
-
-article {
-  text-align: center;
-}
-
-.popup_article h3 {
-  font-size: 25px;
-}
-
-.popup_article h1 {
-  font-size: 35px;
-}
-.popup_article {
-  text-align: start;
-    margin: 3%;
+body {
+  background-color: black;
   }
 
 img {
+  max-width: 400px;
+  min-width: 50%;
   padding-top: 4%;
- 
-}
+  }
+
+.nav2 {
+  display: grid;
+  justify-content: center;
+  width: 100vw;
+  height: 15vh;
+  }
+.nav2 button {
+  margin-right: 5px;
+  padding: 10px;
+  border: 2px solid;
+  border-radius: 20%;
+  border-color: #A0806A;
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  }
+button:hover {
+  color:white;
+  background-color: #A0806A ;
+  transition: 0.3s;
+  }
+
+main {
+  display: grid;
+  margin: 5%;
+  row-gap: 2%;
+  }
+  
+article {
+  text-align: center;
+  }
+
+h1 {
+  text-align: center;
+  letter-spacing: 2px;
+  }
+
+h2 {
+  font-size: 30px;
+  }
 
 .clickingredienser {
   padding: 3%;
@@ -156,25 +185,52 @@ img {
 }
 
 #popup {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: black;
-    overflow: scroll;
-    display: none;
-    
-  }
-  #popup article {
-    width: 85vw;
-    
-    margin: 1rem auto;
-    border: 4px solid;
-    background-color: #3f3f3f;
-  }
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  overflow: scroll;
+  display: none;  
+}
+#popup article {
+  width: 85vw;
+  margin: 1rem auto;
+  border: 4px solid;
+  background-color: #3f3f3f;
+}
+ul {
+  color: white;
+  font-size: 20px;
+}
+#popup article img {
+  width: 100%;
+}
+#luk {
+  position: fixed;
+  padding: auto;
+  cursor: pointer;
+  color: white;
+}
 
-  
+
+
+.popup_article {
+  text-align: start;
+  margin: 3%;
+}
+.popup_article h1 {
+  font-size: 35px;
+}
+
+.popup_article h3 {
+  font-size: 25px;
+}
+
+
+  /* animation til popupvindue (drop) */
+
 .drop {
   animation-name: drop_kf;
   animation-duration: 1s;
@@ -182,78 +238,13 @@ img {
   animation-iteration-count: 1;
 }
 
-
-  @keyframes drop_kf {
-    0% {transform:translateY(-750px) ;}
-    100% {transform: translateY(0px);}
-  }
-
-  
-  #popup article img {
-    width: 100%;
-  }
- 
-  #luk {
-    position: fixed;
-    padding: auto;
-    cursor: pointer;
-    color: white;
-  }
-  ul {
-    color: white;
-    font-size: 20px;
-  }
-
-  main {
-    display: grid;
-    margin: 5%;
-    row-gap: 2%;
-  }
-
-  h1 {
-    text-align: center;
-    letter-spacing: 2px;
-  }
-h2 {
-  font-size: 30px;
+@keyframes drop_kf {
+  0% {transform:translateY(-750px) ;}
+  100% {transform: translateY(0px);}
 }
 
-  body {
-    background-color: black;
-  }
 
-  .nav2 {
-    display: grid;
-    justify-content: center;
-    width: 100vw;
-    height: 15vh;
-
-  }
- 
-  .nav2 button {
-  margin-right: 5px;
-   padding: 10px;
-   border: 2px solid;
-   border-radius: 20%;
-   border-color: #A0806A;
-   background-color: black;
-   color: white;
-   font-size: 20px;
-   cursor: pointer;
-  }
-
-  
-  button:hover {
-  color:white;
-  background-color: #A0806A ;
-  transition: 0.3s;
-  }
-
-  img {
-    max-width: 400px;
-    min-width: 50%;
-  }
-  @media (min-width: 1000px) {
+@media (min-width: 1000px) {
     main {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -263,9 +254,9 @@ h2 {
   }
   }
 
-  @media (min-width: 700px)
+@media (min-width: 700px)
   {
-#popup {
+  #popup {
     position: fixed;
     left: 0;
     top: 0;
@@ -281,6 +272,7 @@ h2 {
     height: auto;
     margin: 1rem auto;
     border: 4px solid;
+    border-color: #A0806A;
     background-color: #3f3f3f;
   }
   }
