@@ -126,7 +126,7 @@ footer ul {
   width: 25%;
   padding: 0 20px;
 }
-.footer-col h4 {
+.footer-col h5 {
   font-family: trajan-pro-3, serif;
   font-size: 1.2rem;
   color: #ffffff;
@@ -134,7 +134,7 @@ footer ul {
   font-weight: 800;
   position: relative;
 }
-.footer-col h4::before {
+.footer-col h5::before {
   content: "";
   position: absolute;
   left: 0;
