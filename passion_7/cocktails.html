@@ -308,6 +308,7 @@ ul {
     },
   };
 
+
   // const, variabel og clicklytter
 
   const main = document.querySelector("#holder");
@@ -321,7 +322,8 @@ ul {
     knap.addEventListener("click", filtrerCocktail)
   );
 
-  // filtrer funktion
+
+  // filtrer funktion sød, sur, bitter
 
   function filtrerCocktail() {
     filter = this.dataset.smag;
@@ -329,6 +331,7 @@ ul {
 
     header.textContent = this.textContent;
   }
+
 
   // hent cocktail data
 
@@ -338,6 +341,7 @@ ul {
 
     vis(json);
   }
+
 
   // vis cocktail data
 
@@ -357,6 +361,7 @@ ul {
     });
   }
 
+
   // popup info
 
   function visIngredienser(json) {
@@ -371,16 +376,10 @@ ul {
   }
 
 
-  
   // luk popup
   document
     .querySelector("#luk")
     .addEventListener("click", () => (popup.style.display = "none"));
 
   hentCocktailData();
-
-
-
-
-  
 </script>
