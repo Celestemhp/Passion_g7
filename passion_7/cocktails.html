@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cocktails</title>
+
+    <!-- Fonts -->
     <link rel="stylesheet" href="generel.css">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -129,8 +131,10 @@ body {
 img {
   max-width: 400px;
   min-width: 50%;
-  padding-top: 4%;
   }
+
+
+/* Filtrerings menu styling + hover effect på button */
 
 .nav2 {
   display: grid;
@@ -160,7 +164,10 @@ main {
   margin: 5%;
   row-gap: 2%;
   }
-  
+
+
+  /* Cocktail article styling  */
+
 article {
   text-align: center;
   }
@@ -174,6 +181,9 @@ h2 {
   font-size: 30px;
   }
 
+
+  /* Ingrediens button styling */
+
 .clickingredienser {
   padding: 3%;
   font-size: 20px;
@@ -183,6 +193,9 @@ h2 {
   color: white;
   cursor: pointer;
 }
+
+
+/* popup vindue styling */
 
 #popup {
   position: fixed;
@@ -200,10 +213,7 @@ h2 {
   border: 4px solid;
   background-color: #3f3f3f;
 }
-ul {
-  color: white;
-  font-size: 20px;
-}
+
 #popup article img {
   width: 100%;
   padding-top: 6%;
@@ -216,6 +226,7 @@ ul {
 }
 
 
+/* Popup tekst tyling */
 
 .popup_article {
   text-align: start;
@@ -227,6 +238,11 @@ ul {
 
 .popup_article h3 {
   font-size: 25px;
+}
+
+ul {
+  color: white;
+  font-size: 20px;
 }
 
 
@@ -245,6 +261,8 @@ ul {
 }
 
 
+/* Responsivt cocktail */
+
 @media (min-width: 1000px) {
     main {
     display: grid;
@@ -255,6 +273,8 @@ ul {
   }
   }
 
+
+  /* Responsiv popup vindue */
 @media (min-width: 700px)
   {
   #popup {
