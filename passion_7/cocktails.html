@@ -87,6 +87,11 @@
 
 <style>
 
+
+article {
+  text-align: center;
+}
+
 .popup_article h1 {
   font-size: 30px;
 }
@@ -100,13 +105,11 @@ img {
 }
 
 .clickingredienser {
-  font-family: "Source Sans Pro", sans-serif;
-  font-size: 25px;
-  border: solid;
-  border: blue;
-  background-color: blue;
+  font-size: 20px;
+  border: 2px solid;
+  border-color: #F9EFE1;
+  background-color: #A0806A;
   cursor: pointer;
-  text-align: center;
 }
 
 button {
@@ -160,6 +163,9 @@ button {
     text-align: center;
     letter-spacing: 2px;
   }
+h2 {
+  font-size: 35px;
+}
 
   body {
     background-color: black;
@@ -175,12 +181,13 @@ button {
   }
 
   .nav2 button {
-    padding: 10px;
-    border: none;
-    background-color: black;
-    color: white;
-    font-size: 30px;
-    cursor: pointer;
+   padding: 10px;
+   border: solid;
+   border-color: #F9EFE1;
+   background-color: #A0806A;
+   color: white;
+   font-size: 30px;
+   cursor: pointer;
   }
   
   button:hover {
@@ -252,7 +259,6 @@ button {
         const klon = template.cloneNode(true);
         klon.querySelector("img").src = "" + json.billedenavn;
         klon.querySelector(".navn").textContent = json.navn;
-        klon.querySelector(".beskrivelse").textContent = json.beskrivelse;
         klon
           .querySelector(".clickingredienser")
           .addEventListener("click", () => visIngredienser(json));
