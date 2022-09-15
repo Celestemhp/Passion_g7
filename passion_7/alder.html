@@ -1,46 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Alder</title>
-    <link rel="stylesheet" href="generel.css">
+    <link rel="stylesheet" href="generel.css" />
     <style>
-        body {
-            background-color: var(--bg-color);
-        } 
-        body h1, h3, label {
-            color: white;
-        }
-        main {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            margin: 30px 0px 0px 0px;
-        }
+      body {
+        background-color: var(--bg-color);
+      }
+      body h1,
+      h3,
+      label {
+        color: white;
+      }
+      main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 30px 0px 0px 0px;
+      }
+      main img {
+        aspect-ratio: 1/1;
+        max-width: 300px;
+      }
+      @media (max-width: 500px) {
         main img {
-            aspect-ratio: 1/1;
-            max-width: 300px;
+          max-width: 150px;
         }
-        @media (max-width: 500px) {
-            main img{
-                max-width: 150px;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <main>
-        <img src="logo.svg" alt="logo_alder">
-        <h1>CRAVE</h1>
-        <h3>To enter this site, you must be over 18 years old.</h3>
-        <form action="index.html">
-            <input type="checkbox" id="alder" value="alder">
-            <label for="Consent"> I´m over 18 years old.</label><br>
-            <input type="submit" value="Consent">
-        </form>
+      <img src="logo.svg" alt="logo_alder" />
+      <h1>CRAVE</h1>
+      <h3>For at fortsætte, skal du være fyldt 18 år.</h3>
+      <form action="index.html">
+        <input type="checkbox" id="alder" value="alder" />
+        <label for="Consent"> Jeg er over 18 år gammel</label><br />
+        <input type="submit" value="Fortsæt" />
+      </form>
     </main>
-</body>
+  </body>
 </html>
